@@ -19,21 +19,34 @@ class PrimeraFiestra (QMainWindow):
         paleta.setColor(QPalette.ColorRole.Window, QColor("black"))
         self.setPalette(paleta)
 #Creamos una caja en la que colocar elementos
-        caixaV= QVBoxLayout()
+        caixav = QVBoxLayout()
 #Creamos un botón
         btnSaudo = QPushButton("Saludo")
+        btnSaudo.clicked.connect(self.on_btnSaudo_clicked)
 #Añadimos el boton a la caja
-        caixaV.addWidget(btnSaudo)
+        caixav.addWidget(btnSaudo)
 #Indicamos que va a contener la ventana
     #Creamos un contenedor
-        container = QWidget
+        container = QWidget()
     #Metemos la caja dentro de el contenedor
-        container.setLayout(caixaV)
+        container.setLayout(caixav)
     #Establecemos el contenedor como el widget central
         self.setCentralWidget(container)
-#Hacemos que la clase sea visible y muestre el layout
+#Hacemos que la clase sea visible y muenster el layout
         self.show()
         self.setVisible(True)
+
+    def on_btnSaudo_clicked(self):
+        print("Hola usuari@")
+
+
+#Crear QLabel
+#Meterlo en el layout
+#Buscar un metodo en etiqueta cambio de texto
+#Cuando el usuario hace click---->Saludar en la etiqueta
+
+
+
 
 #Si el nombre es igual a "Main"
 if __name__ == "__main__":
